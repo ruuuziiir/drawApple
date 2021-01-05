@@ -37,8 +37,13 @@ class ViewController: UIViewController {
 
     @IBAction func appleSlider(_ sender: UISlider) {
         
+        // 將 sender 控制為整數
         sender.value.round()
+        
+        // slider 旁邊文字的顯示格式，不顯示小數點
         number.text = String(format: "%.0f", sender.value)
+        
+        // 把 sender 的值轉成 Int
         let num = Int(sender.value)
 
         if shapeSelect.selectedSegmentIndex == 0 {
