@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,78 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="drawApple" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🍎" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVQ-aj-ddK">
+                                <rect key="frame" x="20" y="120" width="374" height="350"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="RJw-xp-c8c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="u73-sn-mpz">
+                                <rect key="frame" x="38" y="490" width="278" height="31"/>
+                                <connections>
+                                    <action selector="appleSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="TNT-b4-XxR"/>
+                                </connections>
+                            </slider>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gJM-JU-Ey7">
+                                <rect key="frame" x="10" y="74" width="394" height="32"/>
+                                <segments>
+                                    <segment title="正方形"/>
+                                    <segment title="棋盤形"/>
+                                    <segment title="三角形"/>
+                                    <segment title="倒三角"/>
+                                </segments>
+                                <connections>
+                                    <action selector="shapeSelectAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="nEf-uX-pMJ"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OmM-so-9YI">
+                                <rect key="frame" x="339" y="490" width="45" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.83715417712243767" green="0.83170685009340328" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="uVQ-aj-ddK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6ib-HQ-M2u"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uVQ-aj-ddK" secondAttribute="trailing" constant="20" id="ENH-T5-zcA"/>
+                            <constraint firstItem="uVQ-aj-ddK" firstAttribute="top" secondItem="gJM-JU-Ey7" secondAttribute="bottom" constant="15" id="L4i-H0-X25"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="u73-sn-mpz" secondAttribute="trailing" constant="100" id="Moj-Gp-j5F"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OmM-so-9YI" secondAttribute="trailing" constant="30" id="Ory-Id-YfI"/>
+                            <constraint firstItem="u73-sn-mpz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="QS0-yv-0Jj"/>
+                            <constraint firstItem="gJM-JU-Ey7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Rpe-RV-en9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gJM-JU-Ey7" secondAttribute="trailing" constant="10" id="fFm-rU-fUi"/>
+                            <constraint firstItem="u73-sn-mpz" firstAttribute="top" secondItem="uVQ-aj-ddK" secondAttribute="bottom" constant="20" id="g8J-0T-hoq"/>
+                            <constraint firstItem="OmM-so-9YI" firstAttribute="top" secondItem="uVQ-aj-ddK" secondAttribute="bottom" constant="20" id="gMn-2L-aZS"/>
+                            <constraint firstItem="gJM-JU-Ey7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="mrV-go-Hww"/>
+                            <constraint firstItem="OmM-so-9YI" firstAttribute="leading" secondItem="u73-sn-mpz" secondAttribute="trailing" constant="25" id="qlW-g3-z2U"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="apple" destination="uVQ-aj-ddK" id="rza-8b-EMW"/>
+                        <outlet property="number" destination="OmM-so-9YI" id="hGG-Zz-0jm"/>
+                        <outlet property="shapeSelect" destination="gJM-JU-Ey7" id="Wfp-12-0C7"/>
+                        <outlet property="slider" destination="u73-sn-mpz" id="Min-Na-lPM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="88.392857142857139"/>
         </scene>
     </scenes>
 </document>
