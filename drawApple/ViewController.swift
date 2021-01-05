@@ -25,6 +25,12 @@ class ViewController: UIViewController {
         apple.text = "🍎"
         number.text = "1"
         slider.value = 1
+        
+        if shapeSelect.selectedSegmentIndex == 4 {
+            apple.textAlignment = .left
+        } else {
+            apple.textAlignment = .center
+        }
 
     }
     
@@ -43,10 +49,15 @@ class ViewController: UIViewController {
         } else if shapeSelect.selectedSegmentIndex == 2 {
             apple.text = "\(triangle(number: num))"
 
-        } else {
+        } else if shapeSelect.selectedSegmentIndex == 3 {
             apple.text = "\(upsideDownTriangle(number: num))"
 
+        } else {
+            apple.textAlignment = .left
+            apple.text = "\(pyramid(number: num))"
+
         }
+        
 
     }
     

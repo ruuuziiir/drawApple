@@ -21,7 +21,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="350" id="RJw-xp-c8c"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -30,7 +30,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="u73-sn-mpz">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="7" translatesAutoresizingMaskIntoConstraints="NO" id="u73-sn-mpz">
                                 <rect key="frame" x="38" y="490" width="278" height="31"/>
                                 <connections>
                                     <action selector="appleSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="TNT-b4-XxR"/>
@@ -43,6 +43,7 @@
                                     <segment title="棋盤形"/>
                                     <segment title="三角形"/>
                                     <segment title="倒三角"/>
+                                    <segment title="金字塔"/>
                                 </segments>
                                 <connections>
                                     <action selector="shapeSelectAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="nEf-uX-pMJ"/>

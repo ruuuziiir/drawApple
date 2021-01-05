@@ -35,20 +35,25 @@ func board(number: Int) -> String {
     return content
 }
 
-//func pyramid(number: Int) -> String {
-//    var content = "\n"
-//    for x in 1...number {
-//        for y in 1...number {
-//            if x + y > number {
-//                content = content + "🍎"
-//            } else {
-//                content = content + "🍏"
-//            }
-//        }
-//        content = content + "\n"
-//    }
-//    return content
-//}
+func pyramid(number: Int) -> String {
+    var content = "\n"
+    
+    for x in 1...number {
+        for y in 1...number {
+            if x + y > number {
+                content = content + "🍎"
+                if x + y > (number + 1) {
+                    content = content + "🍎"
+
+                }
+            } else {
+                content = content + "🍏"
+            }
+        }
+        content = content + "\n"
+    }
+    return content
+}
 
 func triangle(number: Int) -> String {
     var content = "\n"
